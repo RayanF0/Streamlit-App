@@ -7,7 +7,7 @@ import fitz
 
 st.title('AI Chat')
 
-api_key= "AIzaSyDBqhTqP1aVHncdKeGER4lOUTYkc9sSdN4"
+#api_key= "AIzaSyDBqhTqP1aVHncdKeGER4lOUTYkc9sSdN4"
 
 genai.configure(api_key=api_key)
 
