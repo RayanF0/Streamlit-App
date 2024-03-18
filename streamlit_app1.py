@@ -7,7 +7,7 @@ import fitz
 
 st.title('AI Chat')
 
-#api_key= "AIzaSyDBqhTqP1aVHncdKeGER4lOUTYkc9sSdN4"
+api_key= "AIzaSyDBqhTqP1aVHncdKeGER4lOUTYkc9sSdN4"
 
 genai.configure(api_key=api_key)
 
@@ -68,3 +68,5 @@ with st.form('chat_form'):
 st.subheader("History")
 for speaker, message in st.session_state['history']:
     st.write(speaker + ":", message)
+if __name__ == "__main__":
+    main()
