@@ -2,6 +2,7 @@
 
 import streamlit as st
 import google.generativeai as genai
+from dotenv import load_dotenv
 import fitz
 
 st.title('AI Chat')
