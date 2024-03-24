@@ -60,7 +60,7 @@ with st.form('chat_form'): # creates input field
         if pdffile: # same logic as userinput
             pdftext = read_pdf(pdffile)
             chat.send_message(pdftext) 
-            enqueue_history("👤 User"," ") 
+            enqueue_history("👤 User","Uploaded PDF") 
             AI = chat.last.text 
             enqueue_history("🤖 AI", AI) 
 
