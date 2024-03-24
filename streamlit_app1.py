@@ -52,17 +52,17 @@ with st.form('chat_form'): # creates input field
         st.session_state['chat'] = model.start_chat(history=st.session_state['history']) #creates chat session and passes history
     chat = st.session_state['chat']#assigns it to var chat
     if submit:
-        if userinput: # same logic as pdf file
-            chat.send_message(userinput) 
-            enqueue_history("👤 User", userinput)
-            AI = chat.last.text
-            enqueue_history("🤖 AI", AI)
-        if pdffile:
-            pdftext = read_pdf(pdffile)
-            chat.send_message(pdftext) # sends chat as text to session
-            enqueue_history("User", "Uploaded PDF") #enque
+        if userinput: 
+            chat.send_message(userinput) # sends chat as text to session
+            enqueue_history("👤 User", userinput) #enque function
             AI = chat.last.text #checks latest message
-            enqueue_history("AI", AI) # enque
+            enqueue_history("🤖 AI", AI) # enque function
+        if pdffile: # same logic as userinput
+            pdftext = read_pdf(pdffile)
+            chat.send_message(pdftext) 
+            enqueue_history("👤 User"," ") 
+            AI = chat.last.text 
+            enqueue_history("🤖 AI", AI) 
 
 
 st.subheader("History")
