@@ -34,7 +34,6 @@ def read_pdf(content): # extracts text from pdf
         text = text + page.extract_text() # append text from current page to the empty string
     return text
 
-
 if 'history' not in st.session_state: #initalizes history queue and makes sure that history can store data while the app is running
     st.session_state['history'] = []
 
@@ -64,11 +63,7 @@ with st.form('chat_form'): # creates input field
             AI = chat.last.text 
             enqueue_history("🤖 AI", AI) 
 
-
 st.subheader("History")
 for query, response in st.session_state['history']: # loops through user query and ai response 
     st.write(query + ":") # displays the text 
     st.write(response)
-    
-
-   
